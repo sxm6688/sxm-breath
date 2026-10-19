@@ -579,19 +579,9 @@
     // Overall progress arc
     ctx.beginPath();
     ctx.arc(0, 0, RADIUS * 1.19, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * progress);
-    ctx.strokeStyle = "rgba(199, 245, 91, 0.55)";
+    ctx.strokeStyle = "rgba(88, 238, 242, 0.55)";
     ctx.lineWidth = 1.2;
     ctx.lineCap = "round";
-    ctx.stroke();
-
-    // Center crosshair
-    ctx.beginPath();
-    ctx.moveTo(-RADIUS * 1.25, 0);
-    ctx.lineTo(RADIUS * 1.25, 0);
-    ctx.moveTo(0, -RADIUS * 1.25);
-    ctx.lineTo(0, RADIUS * 1.25);
-    ctx.strokeStyle = "rgba(242, 239, 231, 0.035)";
-    ctx.lineWidth = 1;
     ctx.stroke();
 
     // Target ring
@@ -600,17 +590,17 @@
     ctx.beginPath();
     ctx.setLineDash([2, 7]);
     ctx.arc(0, 0, targetRadius + 10, 0, Math.PI * 2);
-    ctx.strokeStyle = "rgba(199, 245, 91, 0.22)";
+    ctx.strokeStyle = "rgba(88, 238, 242, 0.22)";
     ctx.lineWidth = 1;
     ctx.stroke();
     ctx.setLineDash([]);
 
     ctx.beginPath();
     ctx.arc(0, 0, targetRadius, 0, Math.PI * 2);
-    ctx.strokeStyle = `rgba(199, 245, 91, ${0.38 + align * 0.58})`;
+    ctx.strokeStyle = `rgba(88, 238, 242, ${0.38 + align * 0.58})`;
     ctx.lineWidth = 1.4;
     ctx.shadowBlur = align > 0.65 ? 18 : 5;
-    ctx.shadowColor = "rgba(199, 245, 91, 0.65)";
+    ctx.shadowColor = "rgba(88, 238, 242, 0.65)";
     ctx.stroke();
     ctx.restore();
 
@@ -619,17 +609,17 @@
       const angle = (i / 8) * Math.PI * 2 - Math.PI / 2;
       ctx.beginPath();
       ctx.arc(Math.cos(angle) * targetRadius, Math.sin(angle) * targetRadius, 1.6, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(199, 245, 91, ${0.34 + align * 0.5})`;
+      ctx.fillStyle = `rgba(88, 238, 242, ${0.34 + align * 0.5})`;
       ctx.fill();
     }
 
     // Player light field
     const playerRadius = RADIUS * playerNorm;
     const glow = ctx.createRadialGradient(0, 0, 0, 0, 0, playerRadius * 1.34);
-    glow.addColorStop(0, `rgba(247, 255, 222, ${0.26 + align * 0.2})`);
-    glow.addColorStop(0.42, "rgba(199, 245, 91, 0.13)");
-    glow.addColorStop(0.75, "rgba(199, 245, 91, 0.04)");
-    glow.addColorStop(1, "rgba(199, 245, 91, 0)");
+    glow.addColorStop(0, `rgba(235, 255, 255, ${0.26 + align * 0.2})`);
+    glow.addColorStop(0.42, "rgba(88, 238, 242, 0.13)");
+    glow.addColorStop(0.75, "rgba(88, 238, 242, 0.04)");
+    glow.addColorStop(1, "rgba(88, 238, 242, 0)");
     ctx.beginPath();
     ctx.arc(0, 0, playerRadius * 1.34, 0, Math.PI * 2);
     ctx.fillStyle = glow;
@@ -638,10 +628,10 @@
     // Player orb
     const orb = ctx.createRadialGradient(0, 0, 0, 0, 0, playerRadius);
     orb.addColorStop(0, "rgba(251, 255, 233, 0.99)");
-    orb.addColorStop(0.18, "rgba(226, 255, 145, 0.92)");
-    orb.addColorStop(0.53, "rgba(199, 245, 91, 0.42)");
-    orb.addColorStop(0.84, "rgba(199, 245, 91, 0.08)");
-    orb.addColorStop(1, "rgba(199, 245, 91, 0)");
+    orb.addColorStop(0.18, "rgba(185, 252, 255, 0.92)");
+    orb.addColorStop(0.53, "rgba(88, 238, 242, 0.42)");
+    orb.addColorStop(0.84, "rgba(88, 238, 242, 0.08)");
+    orb.addColorStop(1, "rgba(88, 238, 242, 0)");
     ctx.beginPath();
     ctx.arc(0, 0, playerRadius, 0, Math.PI * 2);
     ctx.fillStyle = orb;
@@ -651,19 +641,19 @@
     ctx.save();
     ctx.beginPath();
     ctx.arc(0, 0, playerRadius, 0, Math.PI * 2);
-    ctx.strokeStyle = `rgba(229, 255, 161, ${0.34 + align * 0.5})`;
+    ctx.strokeStyle = `rgba(185, 252, 255, ${0.34 + align * 0.5})`;
     ctx.lineWidth = 1.15;
     ctx.shadowBlur = 20 + align * 18;
-    ctx.shadowColor = "rgba(199, 245, 91, 0.55)";
+    ctx.shadowColor = "rgba(88, 238, 242, 0.55)";
     ctx.stroke();
     ctx.restore();
 
     // Center dot
     ctx.beginPath();
     ctx.arc(0, 0, 3.1, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(199, 245, 91, 0.95)";
+    ctx.fillStyle = "rgba(88, 238, 242, 0.95)";
     ctx.shadowBlur = 12;
-    ctx.shadowColor = "rgba(199, 245, 91, 0.9)";
+    ctx.shadowColor = "rgba(88, 238, 242, 0.9)";
     ctx.fill();
     ctx.shadowBlur = 0;
 
@@ -679,11 +669,11 @@
         ctx.translate(x, y);
         ctx.beginPath();
         ctx.arc(0, 0, 2.1 * pulse, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(226, 255, 145, 0.62)";
+        ctx.fillStyle = "rgba(185, 252, 255, 0.62)";
         ctx.fill();
         ctx.beginPath();
         ctx.arc(0, 0, 6.5 * pulse, 0, Math.PI * 2);
-        ctx.strokeStyle = "rgba(199, 245, 91, 0.2)";
+        ctx.strokeStyle = "rgba(88, 238, 242, 0.2)";
         ctx.lineWidth = 1;
         ctx.stroke();
         ctx.restore();
@@ -703,9 +693,9 @@
 
       if (mote.type === "light") {
         const halo = ctx.createRadialGradient(0, 0, 0, 0, 0, 15 * pulse);
-        halo.addColorStop(0, "rgba(247, 255, 222, 0.55)");
-        halo.addColorStop(0.42, "rgba(199, 245, 91, 0.24)");
-        halo.addColorStop(1, "rgba(199, 245, 91, 0)");
+        halo.addColorStop(0, "rgba(235, 255, 255, 0.55)");
+        halo.addColorStop(0.42, "rgba(88, 238, 242, 0.24)");
+        halo.addColorStop(1, "rgba(88, 238, 242, 0)");
         ctx.beginPath();
         ctx.arc(0, 0, 15 * pulse, 0, Math.PI * 2);
         ctx.fillStyle = halo;
@@ -716,7 +706,7 @@
         ctx.fill();
         ctx.beginPath();
         ctx.arc(0, 0, 6 * pulse, 0, Math.PI * 2);
-        ctx.strokeStyle = "rgba(199, 245, 91, 0.52)";
+        ctx.strokeStyle = "rgba(88, 238, 242, 0.52)";
         ctx.lineWidth = 1;
         ctx.stroke();
       } else {
@@ -745,7 +735,7 @@
       ctx.strokeStyle =
         flash.type === "noise"
           ? `rgba(201, 152, 121, ${(1 - progress) * 0.55})`
-          : `rgba(199, 245, 91, ${(1 - progress) * 0.62})`;
+          : `rgba(88, 238, 242, ${(1 - progress) * 0.62})`;
       ctx.lineWidth = 1;
       ctx.stroke();
     });
@@ -758,7 +748,7 @@
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillStyle =
-        floater.type === "noise" ? "rgba(201, 152, 121, 0.9)" : "rgba(226, 255, 145, 0.92)";
+        floater.type === "noise" ? "rgba(201, 152, 121, 0.9)" : "rgba(185, 252, 255, 0.92)";
       ctx.fillText(floater.text, floater.x, floater.y - (1 - alpha) * 20);
       ctx.restore();
     });
@@ -775,7 +765,7 @@
           ? `rgba(242, 239, 231, ${alpha * 0.62})`
           : particle.tone === "clay"
             ? `rgba(201, 152, 121, ${alpha * 0.6})`
-          : `rgba(199, 245, 91, ${alpha * 0.72})`;
+          : `rgba(88, 238, 242, ${alpha * 0.72})`;
       ctx.fill();
     });
 

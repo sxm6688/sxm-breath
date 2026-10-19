@@ -9,8 +9,8 @@
   --ink: #131311;
   --ink-soft: #5e5e56;
   --ink-faint: rgba(19, 19, 17, 0.16);
-  --lime: #c7f55b;
-  --lime-bright: #dcff83;
+  --lime: #58eef2;
+  --lime-bright: #b9fcff;
   --dark: #10120e;
   --dark-soft: #171a14;
   --white-soft: #f7f4ec;
@@ -336,8 +336,7 @@ h2 {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(90deg, transparent calc(50% - 0.5px), rgba(19, 19, 17, 0.055) 50%, transparent calc(50% + 0.5px)),
-    linear-gradient(180deg, transparent calc(75% - 0.5px), rgba(19, 19, 17, 0.05) 75%, transparent calc(75% + 0.5px));
+  background-image: linear-gradient(180deg, transparent calc(75% - 0.5px), rgba(19, 19, 17, 0.05) 75%, transparent calc(75% + 0.5px));
   mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
 }
 
@@ -584,7 +583,7 @@ h2 {
   aspect-ratio: 1;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(199, 245, 91, 0.33), rgba(199, 245, 91, 0.08) 42%, transparent 67%);
+  background: radial-gradient(circle, rgba(88, 238, 242, 0.33), rgba(88, 238, 242, 0.08) 42%, transparent 67%);
   filter: blur(40px);
 }
 
@@ -594,7 +593,7 @@ h2 {
   height: 100%;
   border-radius: 50%;
   background:
-    radial-gradient(circle at 50% 42%, rgba(199, 245, 91, 0.08), transparent 38%),
+    radial-gradient(circle at 50% 42%, rgba(88, 238, 242, 0.08), transparent 38%),
     linear-gradient(145deg, #1a1d16, #0d0f0b 68%);
   color: var(--cream);
   box-shadow: 0 45px 100px -55px rgba(19, 19, 17, 0.7), inset 0 0 0 1px rgba(242, 239, 231, 0.08);
@@ -634,7 +633,7 @@ h2 {
 
 .preview__ring--3 {
   width: 94%;
-  border-color: rgba(199, 245, 91, 0.16);
+  border-color: rgba(88, 238, 242, 0.16);
 }
 
 @keyframes slow-spin {
@@ -651,7 +650,7 @@ h2 {
   aspect-ratio: 1;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle at 40% 35%, rgba(246, 255, 218, 0.98), rgba(199, 245, 91, 0.86) 42%, rgba(199, 245, 91, 0.22) 66%, transparent 73%);
+  background: radial-gradient(circle at 40% 35%, rgba(235, 255, 255, 0.98), rgba(88, 238, 242, 0.86) 42%, rgba(88, 238, 242, 0.22) 66%, transparent 73%);
   filter: blur(7px);
   animation: orb-glow 8s ease-in-out infinite;
 }
@@ -680,7 +679,7 @@ h2 {
   height: 5px;
   border-radius: 50%;
   background: var(--lime-bright);
-  box-shadow: 0 0 10px rgba(199, 245, 91, 0.75);
+  box-shadow: 0 0 10px rgba(88, 238, 242, 0.75);
   animation: mote-float 7s ease-in-out infinite;
 }
 
@@ -688,7 +687,7 @@ h2 {
   content: "";
   position: absolute;
   inset: -6px;
-  border: 1px solid rgba(199, 245, 91, 0.25);
+  border: 1px solid rgba(88, 238, 242, 0.25);
   border-radius: 50%;
 }
 
@@ -789,7 +788,7 @@ h2 {
   content: "";
   position: absolute;
   inset: -13px;
-  border: 1px solid rgba(199, 245, 91, 0.22);
+  border: 1px solid rgba(88, 238, 242, 0.22);
   border-radius: 50%;
   transition: inset 0.5s var(--ease), opacity 0.5s ease;
 }
@@ -806,7 +805,7 @@ h2 {
 .play-btn:hover {
   transform: scale(1.08);
   background: var(--lime-bright);
-  box-shadow: 0 0 40px rgba(199, 245, 91, 0.24);
+  box-shadow: 0 0 40px rgba(88, 238, 242, 0.24);
 }
 
 .play-btn:hover::before {
@@ -936,7 +935,7 @@ h2 {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 54% 52%, rgba(199, 245, 91, 0.11), transparent 28%),
+    radial-gradient(circle at 54% 52%, rgba(88, 238, 242, 0.11), transparent 28%),
     radial-gradient(circle at 52% 55%, rgba(62, 91, 53, 0.28), transparent 58%),
     linear-gradient(145deg, #11140f, #0b0d09 62%, #10130d);
 }
@@ -1177,12 +1176,12 @@ h2 {
 
 .collect__dots span.is-lit {
   background: var(--lime);
-  box-shadow: 0 0 7px rgba(199, 245, 91, 0.65);
+  box-shadow: 0 0 7px rgba(88, 238, 242, 0.65);
   transform: scale(1.08);
 }
 
 .collect__dots span:nth-child(12) {
-  outline: 1px solid rgba(199, 245, 91, 0.36);
+  outline: 1px solid rgba(88, 238, 242, 0.36);
   outline-offset: 2px;
 }
 
@@ -1498,7 +1497,7 @@ h2 {
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter: drop-shadow(0 0 6px rgba(199, 245, 91, 0.42));
+  filter: drop-shadow(0 0 6px rgba(88, 238, 242, 0.42));
   stroke-dasharray: 900;
   stroke-dashoffset: 900;
 }
