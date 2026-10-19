@@ -71,7 +71,10 @@
       ? `我在 SXM「呼吸之间」拾起了 ${state.light} 个光点，最高连击 ×${state.maxCombo}。来试试：`
       : "SXM「呼吸之间」——一场 33 秒的拾光小游戏。按住吸气，松开呼气，让圆环经过光点。";
 
-    if (navigator.share) {
+    const prefersNativeShare =
+      navigator.maxTouchPoints > 0 || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (navigator.share && prefersNativeShare) {
       try {
         await navigator.share({ title: "SXM · 呼吸之间", text, url });
         return;
