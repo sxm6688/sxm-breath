@@ -4,6 +4,11 @@
 
 在线体验：[https://sxm6688.github.io/sxm-breath/](https://sxm6688.github.io/sxm-breath/)
 
+## 高清素材
+
+- 手机界面 1170×2532：[sxm-game-hd.png](https://sxm6688.github.io/sxm-breath/sxm-game-hd.png)
+- 分享卡 2400×1260：[sxm-share-hd.png](https://sxm6688.github.io/sxm-breath/sxm-share-hd.png)
+
 ## 玩法
 
 - 按住屏幕或鼠标：吸气，圆环扩张。
