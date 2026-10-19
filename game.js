@@ -62,7 +62,7 @@
     const isLocal =
       window.location.protocol === "file:" ||
       /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
-    return isLocal ? PUBLIC_URL : window.location.href.split("#")[0];
+    return isLocal ? PUBLIC_URL : `${window.location.origin}${window.location.pathname}`;
   }
 
   async function shareGame() {
