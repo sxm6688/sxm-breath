@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="SXM 呼吸之间 —— 一场 33 秒的拾光小游戏。按住吸气，松开呼气，让圆环经过光点。">
+  <meta name="theme-color" content="#F2EFE7">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SXM · 呼吸之间｜拾光小游戏">
+  <meta property="og:description" content="按住吸气，松开呼气，在 33 秒里拾起 18 个光点。">
+  <meta property="og:url" content="https://sxm6688.github.io/sxm-breath/">
+  <meta property="og:image" content="https://sxm6688.github.io/sxm-breath/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SXM · 呼吸之间｜拾光小游戏">
+  <meta name="twitter:description" content="按住吸气，松开呼气，在 33 秒里拾起 18 个光点。">
+  <meta name="twitter:image" content="https://sxm6688.github.io/sxm-breath/og-image.png">
+  <link rel="canonical" href="https://sxm6688.github.io/sxm-breath/">
+  <title>SXM · 呼吸之间｜拾光小游戏</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='50%25' fill='%23131311'/%3E%3Ccircle cx='44' cy='20' r='9' fill='%23C7F55B'/%3E%3Ctext x='15' y='43' font-family='Arial Black' font-size='20' fill='%23F2EFE7'%3ESXM%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <a class="skip-link" href="#gameStart">跳到游戏</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-head">
+    <a class="brand" href="game.html" aria-label="SXM 首页">
+      <span class="brand__mark">SXM<span class="brand__dot" aria-hidden="true"></span></span>
+      <span class="brand__divider" aria-hidden="true"></span>
+      <span class="brand__type">VISUAL ARTIST<br>&amp; DESIGNER</span>
+    </a>
+    <div class="head-actions">
+      <button class="share-btn" type="button" data-share aria-label="分享小游戏">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.2"/><circle cx="6" cy="12" r="2.2"/><circle cx="18" cy="19" r="2.2"/><path d="m8 11 7.8-4.6M8 13l7.8 4.6"/></svg>
+        <span>分享</span>
+      </button>
+      <button class="sound-btn" type="button" data-sound aria-pressed="false" aria-label="打开空间声音">
+        <span class="sound-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="sound-label">声音</span>
+      </button>
+      <span class="head-index">SXM / 2026</span>
+    </div>
+  </header>
+
+  <main class="landing">
+    <div class="landing__rail" aria-hidden="true">
+      <span>ONE BREATH AT A TIME</span>
+      <span class="rail-line"></span>
+      <span>31.23° N / 121.45° E</span>
+    </div>
+
+    <div class="landing__grid">
+      <section class="hero-copy">
+        <p class="eyebrow reveal"><span class="lime-dot"></span> A SMALL GAME FOR A SLOWER DAY</p>
+        <h1 class="reveal">呼吸<br><span class="hero-copy__second">之间<span class="title-dot" aria-hidden="true"></span></span></h1>
+        <p class="lede reveal">一场 33 秒的拾光练习。<br>跟着圆环呼吸，让圆环经过漂浮的光点。<br>不需要做得完美，只需要回来。</p>
+        <div class="hero-actions reveal">
+          <button class="start-btn" type="button" data-open-game id="gameStart">
+            <span class="start-btn__dot" aria-hidden="true"></span>
+            开始呼吸
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </button>
+          <button class="sound-link" type="button" data-sound-link>先听一段空间声音 <span>↗</span></button>
+        </div>
+        <div class="how reveal">
+          <div class="how__item">
+            <span class="how__n">01</span>
+            <div><strong>按住</strong><span>吸气，让圆环长大</span></div>
+          </div>
+          <div class="how__item">
+            <span class="how__n">02</span>
+            <div><strong>松开</strong><span>呼气，让身体慢下来</span></div>
+          </div>
+          <div class="how__item">
+            <span class="how__n">03</span>
+            <div><strong>拾光</strong><span>让圆环经过光点</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="preview reveal" aria-label="呼吸游戏预览">
+        <div class="preview__glow" aria-hidden="true"></div>
+        <div class="preview__disc">
+          <div class="preview__ring preview__ring--1" aria-hidden="true"></div>
+          <div class="preview__ring preview__ring--2" aria-hidden="true"></div>
+          <div class="preview__ring preview__ring--3" aria-hidden="true"></div>
+          <div class="preview__orb" aria-hidden="true"></div>
+          <div class="preview__motes" aria-hidden="true">
+            <i class="preview__mote preview__mote--1"></i>
+            <i class="preview__mote preview__mote--2"></i>
+            <i class="preview__mote preview__mote--3"></i>
+            <i class="preview__mote preview__mote--4"></i>
+            <i class="preview__mote preview__mote--5"></i>
+          </div>
+          <svg class="preview__orbit" viewBox="0 0 440 440" aria-hidden="true">
+            <defs>
+              <path id="previewOrbit" d="M220,220 m-176,0 a176,176 0 1,1 352,0 a176,176 0 1,1 -352,0"/>
+            </defs>
+            <text>
+              <textPath href="#previewOrbit" startOffset="0">BREATHE IN · HOLD · BREATHE OUT · SXM · </textPath>
+            </text>
+          </svg>
+          <div class="preview__core">
+            <button class="play-btn" type="button" data-open-game aria-label="开始呼吸游戏">
+              <span class="play-tri" aria-hidden="true"></span>
+            </button>
+            <span>开始呼吸</span>
+          </div>
+          <span class="preview__label">SXM / BREATH ROOM</span>
+          <span class="preview__timer">33 SEC</span>
+        </div>
+        <p class="preview__note"><span class="preview__note-dot" aria-hidden="true"></span>按住 · 松开 · 跟随圆环</p>
+      </section>
+    </div>
+
+    <footer class="landing__foot">
+      <span>© 2026 SXM</span>
+      <span>A SMALL GAME FOR A SLOWER DAY</span>
+      <span>SHANGHAI · CN</span>
+    </footer>
+  </main>
+
+  <div class="game" data-game aria-hidden="true" role="dialog" aria-modal="true" aria-label="呼吸之间疗愈游戏">
+    <div class="game__ambient" aria-hidden="true"></div>
+    <div class="game__grain" aria-hidden="true"></div>
+
+    <header class="game__head">
+      <div class="brand brand--light">
+        <span class="brand__mark">SXM<span class="brand__dot" aria-hidden="true"></span></span>
+        <span class="brand__divider" aria-hidden="true"></span>
+        <span class="brand__type">VISUAL ARTIST<br>&amp; DESIGNER</span>
+      </div>
+      <div class="game__progress">
+        <div class="game__progress-label"><span>呼吸</span><strong data-cycle>01 / 03</strong></div>
+        <div class="game__progress-track"><i data-progress></i></div>
+      </div>
+      <div class="game__head-actions">
+        <button class="sound-btn sound-btn--light" type="button" data-sound aria-pressed="false" aria-label="打开空间声音">
+          <span class="sound-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span class="sound-label">声音</span>
+        </button>
+        <button class="close-btn" type="button" data-close-game aria-label="结束练习">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="game__stage" data-stage tabindex="0">
+      <div class="game__phase">
+        <p class="eyebrow"><span class="lime-dot"></span> BREATH <span data-cycle-small>01 / 03</span></p>
+        <h2 data-phase>准备好了吗</h2>
+        <p class="game__count" data-phase-count>按住开始</p>
+        <p class="game__instruction" data-instruction>按住任意处，开始第一次吸气。让圆环经过光点。</p>
+      </div>
+
+      <canvas data-canvas aria-hidden="true"></canvas>
+
+      <div class="game__collect">
+        <span class="collect__label">拾光 / LIGHT</span>
+        <strong><span data-light>00</span><small>/ 18</small></strong>
+        <div class="collect__dots" data-light-dots aria-hidden="true"></div>
+        <div class="collect__combo" data-combo>连击 ×1</div>
+      </div>
+
+      <div class="game__readout">
+        <div class="readout__top"><span>实时共振</span><strong data-resonance>00<small>%</small></strong></div>
+        <div class="readout__bar"><i data-resonance-bar></i></div>
+      </div>
+    </div>
+
+    <footer class="game__foot">
+      <div class="hold-hints">
+        <span class="hold-hint is-active" data-hint-hold><b>按住</b><small>吸气</small></span>
+        <span class="hold-hint" data-hint-release><b>松开</b><small>呼气</small></span>
+      </div>
+      <span class="game__foot-meta">3 BREATHS · 18 LIGHTS · SXM</span>
+      <button class="end-btn" type="button" data-close-game>结束练习</button>
+    </footer>
+
+    <section class="game__result" data-result aria-hidden="true">
+      <div class="result__card">
+        <button class="result__share" type="button" data-share>分享 ↗</button>
+        <p class="eyebrow"><span class="lime-dot"></span> SESSION COMPLETE</p>
+        <h2>你回来了。</h2>
+        <p class="result__lede" data-result-lede>三次呼吸，不多不少。你已经把注意力带回了身体。</p>
+        <div class="result__stats">
+          <div><span>共振指数</span><strong data-result-score>—</strong></div>
+          <div><span>完成呼吸</span><strong>3<small>次</small></strong></div>
+          <div><span>停留时间</span><strong data-result-time>33<small>秒</small></strong></div>
+        </div>
+        <p class="result__light">拾光 <strong data-result-light>00</strong><span>/ 18</span><em>最高连击 ×<b data-result-combo>0</b></em></p>
+        <svg class="result__spark" viewBox="0 0 500 72" preserveAspectRatio="none" aria-hidden="true">
+          <path data-spark-path d="M0,50 L20,48 L40,44 L60,46 L80,35 L100,32 L120,38 L140,27 L160,18 L180,24 L200,20 L220,14 L240,18 L260,12 L280,16 L300,10 L320,13 L340,9 L360,12 L380,8 L400,11 L420,8 L440,10 L460,6 L480,8 L500,5"/>
+        </svg>
+        <p class="result__quote">“疗愈不是修复一个坏掉的你，<br>而是记起你本来就完整。”</p>
+        <div class="result__actions">
+          <button class="start-btn start-btn--light" type="button" data-replay>
+            <span class="start-btn__dot" aria-hidden="true"></span>
+            再呼吸一次
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </button>
+          <button class="text-link text-link--light" type="button" data-close-game>回到 sxm <span>↗</span></button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" data-toast aria-live="polite"></div>
+  <script src="game.js"></script>
+</body>
+</html>
